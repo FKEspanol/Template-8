@@ -12,7 +12,7 @@ export default {
             },
             colors: {
                 dark: "#1f1f1f",
-                primary: "#feb900",
+                primary: "#98C949",
                 smoke: "#6c757d",
                 lightenDark: "#313131",
             },
