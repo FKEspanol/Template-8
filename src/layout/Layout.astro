@@ -1,5 +1,5 @@
 ---
-
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 ---
 
 <html lang="en">
@@ -8,6 +8,7 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={SITE_DESCRIPTION} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -20,7 +21,7 @@
         />
         <link rel="stylesheet" href="/css/fontawesome_all.min.css" />
         <link rel="stylesheet" href="/swiper_bundle.min.css" />
-        <title>Astro</title>
+        <title>{SITE_TITLE}</title>
     </head>
     <body>
         <slot />

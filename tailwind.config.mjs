@@ -13,8 +13,8 @@ export default {
             colors: {
                 dark: "#1f1f1f",
                 primary: "#98C949",
-                smoke: "#6c757d",
-                lightenDark: "#313131",
+                smoke: "#4D4D5C",
+                lightenDark: "#2E2E37",
             },
         },
     },
