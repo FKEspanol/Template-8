@@ -1,0 +1,142 @@
+---
+import Section from "./reusable/section.astro";
+import SectionHeader from "./reusable/sectionHeader.astro";
+---
+
+<Section>
+    <SectionHeader heading="My Works" subHeading="Portfolio" />
+    <ol id="works-filters" class="flex md:gap-x-3 w-fit mx-auto mb-12">
+        <li>
+            <button
+                class="filter-btn play-semibold text-lg hover:text-primary transition-all px-2 py-1 md:px-5 md:py-3 text-primary"
+                data-filter="*">All</button
+            >
+        </li>
+        <li>
+            <button
+                class="filter-btn play-semibold text-lg hover:text-primary transition-all px-2 py-1 md:px-5 md:py-3"
+                data-filter=".filter-design">Web Design</button
+            >
+        </li>
+        <li>
+            <button
+                class="filter-btn play-semibold text-lg hover:text-primary transition-all px-2 py-1 md:px-5 md:py-3"
+                data-filter=".filter-dev">Development</button
+            >
+        </li>
+        <li>
+            <button
+                class="filter-btn play-semibold text-lg hover:text-primary transition-all px-2 py-1 md:px-5 md:py-3"
+                data-filter=".filter-photo">Photography</button
+            >
+        </li>
+    </ol>
+    <section class="flex flex-wrap works-container">
+        <div class="works-item filter-design sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/design-1.jpg"
+                alt="design-1-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-dev sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/dev-1.jpg"
+                alt="dev-1-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-photo sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/photo-1.jpg"
+                alt="photo-1-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-dev sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/dev-2.jpg"
+                alt="dev-2-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-photo sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/photo-2.jpg"
+                alt="photo-2-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-design sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/design-2.jpg"
+                alt="design-2-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-photo sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/photo-3.jpg"
+                alt="photo-3-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-design sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/design-3.jpg"
+                alt="design-3-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+        <div class="works-item filter-dev sm:w-1/2 lg:w-2/6 p-2">
+            <img
+                src="/images/works/dev-3.jpg"
+                alt="dev-3-image"
+                class="w-full rounded-2xl"
+            />
+        </div>
+    </section>
+</Section>
+
+<script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
+<script is:inline src="/js/isotope.pkgd.min.js"></script>
+<script is:inline type="module">
+    const select = (query, all = false) => {
+        query = query.trim();
+        if (all) {
+            return [...document.querySelectorAll(query)];
+        } else return document.querySelector(query);
+    };
+
+    const on = (event, query, listener, all = false) => {
+        let selectElement = select(query, all);
+        if (selectElement) {
+            if (all) {
+                selectElement.forEach((el) =>
+                    el.addEventListener(event, listener)
+                );
+            } else {
+                selectElement.addEventListener(event, listener);
+            }
+        }
+    };
+    const worksContainer = select(".works-container");
+    const iso = new Isotope(worksContainer, {
+        itemSelector: ".works-item",
+        layoutMode: "masonry",
+    });
+
+    on(
+        "click",
+        "ol#works-filters li button.filter-btn",
+        function (e) {
+            e.preventDefault();
+            select(".filter-btn", true).forEach((btn) =>
+                btn.classList.remove("text-primary")
+            );
+            this.classList.add("text-primary");
+            iso.arrange({ filter: this.getAttribute("data-filter") });
+        },
+        true
+    );
+</script>
