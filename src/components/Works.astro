@@ -33,73 +33,128 @@ import SectionHeader from "./reusable/sectionHeader.astro";
     </ol>
     <section class="flex flex-wrap works-container">
         <div class="works-item filter-design sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/design-1.jpg"
-                alt="design-1-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/design-1.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/design-1.jpg"
+                    alt="design-1-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-dev sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/dev-1.jpg"
-                alt="dev-1-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/dev-1.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/dev-1.jpg"
+                    alt="dev-1-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-photo sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/photo-1.jpg"
-                alt="photo-1-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/photo-1.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/photo-1.jpg"
+                    alt="photo-1-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-dev sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/dev-2.jpg"
-                alt="dev-2-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/dev-2.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/dev-2.jpg"
+                    alt="dev-2-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-photo sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/photo-2.jpg"
-                alt="photo-2-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/photo-2.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/photo-2.jpg"
+                    alt="photo-2-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-design sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/design-2.jpg"
-                alt="design-2-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/design-2.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/design-2.jpg"
+                    alt="design-2-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-photo sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/photo-3.jpg"
-                alt="photo-3-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/photo-3.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/photo-3.jpg"
+                    alt="photo-3-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-design sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/design-3.jpg"
-                alt="design-3-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/design-3.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/design-3.jpg"
+                    alt="design-3-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
         <div class="works-item filter-dev sm:w-1/2 lg:w-2/6 p-2">
-            <img
-                src="/images/works/dev-3.jpg"
-                alt="dev-3-image"
-                class="w-full rounded-2xl"
-            />
+            <a
+                href="/images/works/dev-3.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+            >
+                <img
+                    src="/images/works/dev-3.jpg"
+                    alt="dev-3-image"
+                    class="w-full rounded-2xl"
+                />
+            </a>
         </div>
     </section>
 </Section>
 
 <script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
 <script is:inline src="/js/isotope.pkgd.min.js"></script>
+<script is:inline src="/js/glightbox.min.js"></script>
 <script is:inline type="module">
     const select = (query, all = false) => {
         query = query.trim();
@@ -126,6 +181,9 @@ import SectionHeader from "./reusable/sectionHeader.astro";
         layoutMode: "masonry",
     });
 
+    imagesLoaded(worksContainer, function () {
+        iso.layout();
+    });
     on(
         "click",
         "ol#works-filters li button.filter-btn",
@@ -139,4 +197,8 @@ import SectionHeader from "./reusable/sectionHeader.astro";
         },
         true
     );
+
+    GLightbox({
+        selector: ".portfolio-lightbox",
+    });
 </script>
