@@ -1,0 +1,40 @@
+---
+import Section from "./reusable/section.astro";
+import SectionHeader from "./reusable/sectionHeader.astro";
+
+import awardsData from "../data/awards-data.json";
+---
+
+<Section className="bg-[#F0F9FA]">
+    <SectionHeader
+        heading="Awards & Achivements"
+        subHeading="Success Stories"
+    />
+    <section class="mt-32">
+        {
+            awardsData.map((data, index) => (
+                <ol
+                    class={`lg:flex py-10 gap-x-3 border-b border-gray-300 ${index === 0 ? "border-t" : ""}`}
+                >
+                    <li class="text-center mb-4 lg:mb-0 lg:text-start lg:w-1/3">
+                        <h5 class="mb-2 play-bold text-xl lg:text-2xl">
+                            {data.award}
+                        </h5>
+                        <p class="text-xl text-smoke">{data.year}</p>
+                    </li>
+                    <li class="text-center mb-4 lg:mb-0 lg:text-start lg:w-1/3">
+                        <h5 class="mb-2 play-bold text-xl lg:text-2xl">
+                            {data.event}
+                        </h5>
+                        <p class="text-xl text-smoke">{data.location}</p>
+                    </li>
+                    <li class="text-center mb-4 lg:mb-0 lg:text-start lg:w-1/3">
+                        <p class="text-lg text-smoke leading-7">
+                            {data["award-content"]}
+                        </p>
+                    </li>
+                </ol>
+            ))
+        }
+    </section>
+</Section>
