@@ -1,0 +1,41 @@
+---
+import Section from "./reusable/section.astro";
+import SectionHeader from "./reusable/sectionHeader.astro";
+---
+
+<Section>
+    <div class="lg:flex">
+        <div class="mb-12 lg:mb-0 lg:w-1/2 px-3">
+            <SectionHeader
+                textCenter={false}
+                heading="Growing Over Time"
+                subHeading="My Skill"
+            />
+            <p class="text-smoke text-lg">
+                Sed ut perspiciatis unde omnis iste natus
+            </p>
+        </div>
+        <div
+            class="lg:w-1/2 sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-3 items-center"
+        >
+            <div class="text-center mb-8 md:mb-0">
+                <i class="fa-solid fa-code text-primary text-7xl"></i>
+                <p class="play-bold text-2xl mt-5 mb-2 text-smoke">
+                    Software Development
+                </p>
+            </div>
+            <div class="text-center mb-8 md:mb-0">
+                <i class="fa-solid fa-computer text-primary text-7xl"></i>
+                <p class="play-bold text-2xl mt-5 mb-2 text-smoke">
+                    System Application
+                </p>
+            </div>
+            <div class="text-center mb-8 md:mb-0">
+                <i class="fa-solid fa-folder text-primary text-7xl"></i>
+                <p class="play-bold text-2xl mt-5 mb-2 text-smoke">
+                    Data Administration
+                </p>
+            </div>
+        </div>
+    </div>
+</Section>
