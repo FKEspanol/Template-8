@@ -1,0 +1,110 @@
+---
+import Section from "./reusable/section.astro";
+import SectionHeader from "./reusable/sectionHeader.astro";
+---
+
+<Section className="bg-[#F0F9FA]">
+    <SectionHeader heading="What People Say" subHeading="Testimonials" />
+    <div class="swiper mt-20">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper text-center">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img
+                    src="/images/donya-1.jpg"
+                    alt=""
+                    class="w-40 h-40 mx-auto rounded-full mb-5 object-cover"
+                />
+                <h5 class="play-semibold text-2xl">Donya Tesoro</h5>
+                <small class="text-base text-smoke">Freelancer</small>
+                <p class="mt-3 leading-7 text-smoke text-lg lg:w-[80%] mx-auto">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Velit consequuntur beatae ea unde in laborum neque
+                    temporibus facilis nisi nam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Rem omnis voluptates eos?
+                    Repudiandae omnis recusandae quisquam possimus, minima
+                    aspernatur qui.
+                </p>
+            </div>
+
+            <div class="swiper-slide">
+                <img
+                    src="/images/gwen-1.jpg"
+                    alt=""
+                    class="w-40 h-40 mx-auto rounded-full mb-5 object-cover"
+                />
+                <h5 class="play-semibold text-2xl">Gwen Soriano</h5>
+                <small class="text-base text-smoke">Model</small>
+                <p class="mt-3 leading-7 text-smoke text-lg lg:w-[80%] mx-auto">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Velit consequuntur beatae ea unde in laborum neque
+                    temporibus facilis nisi nam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Rem omnis voluptates eos?
+                    Repudiandae omnis recusandae quisquam possimus, minima
+                    aspernatur qui.
+                </p>
+            </div>
+
+            <div class="swiper-slide">
+                <img
+                    src="/images/melanie-1.jpg"
+                    alt=""
+                    class="w-40 h-40 mx-auto rounded-full mb-5 object-cover"
+                />
+                <h5 class="play-semibold text-2xl">Melanie Angeles</h5>
+                <small class="text-base text-smoke">Client</small>
+                <p class="mt-3 leading-7 text-smoke text-lg lg:w-[80%] mx-auto">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Velit consequuntur beatae ea unde in laborum neque
+                    temporibus facilis nisi nam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Rem omnis voluptates eos?
+                    Repudiandae omnis recusandae quisquam possimus, minima
+                    aspernatur qui.
+                </p>
+            </div>
+
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination relative mt-10"></div>
+
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+</Section>
+
+<script is:inline src="/js/swiper_bundle.min.js"></script>
+<script is:inline>
+    const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            bulletActiveClass: "swiper-pagination-bullet-active bg-primary",
+        },
+
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+    });
+</script>
