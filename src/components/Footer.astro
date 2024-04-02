@@ -1,0 +1,47 @@
+---
+import Section from "./reusable/section.astro";
+---
+
+<Section>
+    <div class="sm:grid sm:grid-cols-2 xl:grid-cols-3">
+        <div class="sm:col-span-1 mb-7 xl:mb-0">
+            <h4 class="play-bold text-4xl mb-5">
+                Hi<span class="text-primary">Bro</span>
+            </h4>
+            <p class="text-smoke">All rights reserved ©</p>
+        </div>
+        <div class="sm:col-span-1 mb-7 xl:mb-0">
+            <h6 class="play-semibold text-2xl mt-2 mb-7">Follow Me</h6>
+            <div class="flex gap-x-5">
+                <a href="/"
+                    ><i class="fab fa-facebook text-[#1877F2] text-3xl"></i></a
+                >
+                <a href="/"
+                    ><i class="fab fa-twitter text-[#1DA1F2] text-3xl"></i></a
+                >
+                <a href="/"
+                    ><i class="fab fa-linkedin text-[#0077B5] text-3xl"></i></a
+                >
+                <a href="/"
+                    ><i class="fab fa-instagram text-[#FF4EAE] text-3xl"></i></a
+                >
+            </div>
+        </div>
+        <div class="sm:col-span-1 mb-7 xl:mb-0">
+            <h6 class="play-semibold text-2xl mt-2 mb-7">Newsletter</h6>
+            <form action="" class="w-full flex">
+                <input
+                    type="email"
+                    name=""
+                    id=""
+                    class="p-3 rounded-tl rounded-bl w-full sm:text-lg border border-gray-300 focus:outline-none focus:border-primary focus:ring-primary focus:ring-1 play-regular"
+                    placeholder="Submit Your Email"
+                />
+                <button class="text-white bg-primary rounded-tr rounded-br p-3"
+                    ><i class="fa-solid fa-paper-plane text-white text-2xl"
+                    ></i></button
+                >
+            </form>
+        </div>
+    </div>
+</Section>
