@@ -5,25 +5,77 @@
 <header id="navbar" class="py-10 fixed w-full z-10 transition-all duration-300">
     <div class="cust-container">
         <div class="flex justify-between items-center">
-            <a href="/">
+            <a href="#">
                 <h2 class="play-bold text-4xl">
                     Hi<span class="text-primary">Bro</span>
                 </h2>
             </a>
             <nav class="hidden lg:flex justify-between gap-x-10 play-regular">
-                <a href="/" class="text-lg">Home</a>
-                <a href="/about" class="text-lg">About</a>
-                <a href="/works" class="text-lg">Works</a>
-                <a href="/service" class="text-lg">Service</a>
-                <a href="/blog" class="text-lg">Blog</a>
-                <a href="/contact" class="text-lg">Contact</a>
+                <a href="#" class="text-lg">Home</a>
+                <a href="#about" class="text-lg">About</a>
+                <a href="#works" class="text-lg">Works</a>
+                <a href="#service" class="text-lg">Service</a>
+                <a href="#blog" class="text-lg">Blog</a>
+                <a href="#contact" class="text-lg">Contact</a>
             </nav>
-            <div id="side-nav-btn" class="lg:hidden flex items-center">
+            <button id="sidebar-btn" class="lg:hidden flex items-center">
                 <i class="fa-solid fa-bars text-2xl"></i>
-            </div>
+            </button>
         </div>
     </div>
 </header>
+<div
+    id="sidebar"
+    class="fixed -right-[400px] top-0 bottom-0 max-w-[400px] w-full bg-white z-[12] px-5 transition-all duration-500"
+>
+    <div id="close-sidebar" class="py-5 items-center">
+        <i class="fa-solid fa-arrow-right text-primary text-4xl"></i>
+    </div>
+    <ol>
+        <li>
+            <a
+                href="#"
+                class="block py-3 px-3 hover:bg-primary hover:text-white transition-all duration-150"
+                >Home</a
+            >
+        </li>
+        <li>
+            <a
+                href="#about"
+                class="block py-3 px-3 hover:bg-primary hover:text-white transition-all duration-150"
+                >About</a
+            >
+        </li>
+        <li>
+            <a
+                href="#works"
+                class="block py-3 px-3 hover:bg-primary hover:text-white transition-all duration-150"
+                >Works</a
+            >
+        </li>
+        <li>
+            <a
+                href="#service"
+                class="block py-3 px-3 hover:bg-primary hover:text-white transition-all duration-150"
+                >Service</a
+            >
+        </li>
+        <li>
+            <a
+                href="#blog"
+                class="block py-3 px-3 hover:bg-primary hover:text-white transition-all duration-150"
+                >Blog</a
+            >
+        </li>
+        <li>
+            <a
+                href="#contact"
+                class="block py-3 px-3 hover:bg-primary hover:text-white transition-all duration-150"
+                >Contact</a
+            >
+        </li>
+    </ol>
+</div>
 
 <script is:inline>
     const navbar = document.querySelector("header#navbar");
@@ -46,4 +98,18 @@
             navbar.classList.add("py-5", "bg-white", "shadow");
         }
     });
+
+    const sidebarBtn = document.getElementById("sidebar-btn"),
+        sidebar = document.getElementById("sidebar"),
+        closeSidebar = document.getElementById("close-sidebar");
+
+    sidebarBtn.onclick = () => {
+        sidebar.classList.remove("-right-[400px]");
+        sidebar.classList.add("right-0");
+    };
+
+    closeSidebar.onclick = () => {
+        sidebar.classList.remove("right-0");
+        sidebar.classList.add("-right-[400px]");
+    };
 </script>
